@@ -10,6 +10,12 @@
     >
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+    >
     <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -80,6 +86,28 @@
         <path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z"></path>
         <path d="M17.5 6.5h.01"></path>
       </symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24">
+        <path d="M7 3v4"></path>
+        <path d="M17 3v4"></path>
+        <path d="M5 7h14"></path>
+        <rect x="5" y="5" width="14" height="16" rx="2"></rect>
+        <path d="M9 11h2"></path>
+        <path d="M13 11h2"></path>
+        <path d="M9 15h2"></path>
+      </symbol>
+      <symbol id="icon-map-pin" viewBox="0 0 24 24">
+        <path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"></path>
+        <circle cx="12" cy="10" r="2.5"></circle>
+      </symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path>
+      </symbol>
+      <symbol id="icon-monitor" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="11" rx="2"></rect>
+        <path d="M9 20h6"></path>
+        <path d="M12 16v4"></path>
+      </symbol>
     </svg>
 
     <header class="site-header">
@@ -117,40 +145,56 @@
           <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
         </a>
 
-        <a class="button button-primary js-booking-link" href="https://ff.healthatom.io/pR1Ikc">Agendar turno</a>
+        <div class="header-actions">
+          <a class="button button-whatsapp header-whatsapp js-whatsapp-link" href="#" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+            <span>WhatsApp</span>
+          </a>
+          <a class="button button-primary js-booking-link" href="https://ff.healthatom.io/pR1Ikc">
+            <svg aria-hidden="true"><use href="#icon-calendar"></use></svg>
+            Agendar turno
+          </a>
+        </div>
       </nav>
     </header>
 
     <main id="inicio">
       <section class="hero section">
-        <img
-          class="hero-background"
-          src="assets/cmv-hero.png"
-          alt="Consultorio odontológico moderno y luminoso"
-        >
-        <div class="section-inner">
+        <div class="section-inner hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Odontología en CABA</p>
-            <h1>Cuidamos tu sonrisa con atención profesional y personalizada</h1>
+            <h1>Transformamos tu sonrisa en un espacio pensado para que te sientas cómodo desde la primera consulta.</h1>
             <p class="hero-text">
-              Odontología general, estética dental y tratamientos integrales en un espacio moderno y cercano.
+              Odontología moderna, cercana y personalizada, enfocada en tu bienestar y en la salud de tu sonrisa.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary js-booking-link" href="https://ff.healthatom.io/pR1Ikc">Agendar turno</a>
               <a class="button button-whatsapp js-whatsapp-link" href="#" target="_blank" rel="noopener">
                 <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                Consultar por WhatsApp
+                Reservar turno por WhatsApp
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://www.google.com/maps/search/?api=1&query=Pres.%20Luis%20S%C3%A1enz%20Pe%C3%B1a%20819%203H%20CABA"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg aria-hidden="true"><use href="#icon-map-pin"></use></svg>
+                Cómo llegar
               </a>
             </div>
           </div>
+
+          <figure class="hero-card">
+            <img src="assets/cmv-hero.png" alt="Consultorio odontológico moderno y luminoso">
+          </figure>
         </div>
       </section>
 
       <section class="section treatments" id="tratamientos">
         <div class="section-inner">
-          <div class="section-heading">
+          <div class="section-heading section-heading-center">
             <p class="eyebrow">Servicios</p>
-            <h2>Tratamientos</h2>
+            <h2>Tratamientos para cada sonrisa</h2>
             <p>
               Ofrecemos tratamientos orientados al cuidado, la prevención y la estética de tu sonrisa,
               con una mirada personalizada para cada paciente.
@@ -175,12 +219,12 @@
               <span>Urgencias odontológicas</span>
             </article>
             <article class="treatment-card">
-              <svg class="treatment-icon" aria-hidden="true"><use href="#icon-ortodoncia"></use></svg>
-              <span>Ortodoncia</span>
-            </article>
-            <article class="treatment-card">
               <svg class="treatment-icon" aria-hidden="true"><use href="#icon-cirugia"></use></svg>
               <span>Cirugía odontológica</span>
+            </article>
+            <article class="treatment-card">
+              <svg class="treatment-icon" aria-hidden="true"><use href="#icon-ortodoncia"></use></svg>
+              <span>Ortodoncia</span>
             </article>
             <article class="treatment-card">
               <svg class="treatment-icon" aria-hidden="true"><use href="#icon-estetica"></use></svg>
@@ -202,50 +246,98 @@
         </div>
       </section>
 
+      <section class="section why">
+        <div class="section-inner">
+          <div class="section-heading section-heading-center">
+            <p class="eyebrow">Por qué elegirnos</p>
+            <h2>Un espacio pensado para vos</h2>
+          </div>
+
+          <div class="why-grid" aria-label="Beneficios principales">
+            <article class="why-item">
+              <svg aria-hidden="true"><use href="#icon-user"></use></svg>
+              <h3>Atención personalizada</h3>
+              <p>Te escuchamos y diseñamos tratamientos a medida, priorizando tu bienestar.</p>
+            </article>
+            <article class="why-item">
+              <svg aria-hidden="true"><use href="#icon-monitor"></use></svg>
+              <h3>Tecnología moderna</h3>
+              <p>Equipamiento actual para diagnósticos precisos y tratamientos eficientes.</p>
+            </article>
+            <article class="why-item">
+              <svg aria-hidden="true"><use href="#icon-map-pin"></use></svg>
+              <h3>Ubicación estratégica en CABA</h3>
+              <p>Estamos en una zona céntrica y de fácil acceso para tu comodidad.</p>
+            </article>
+            <article class="why-item">
+              <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              <h3>Turnos rápidos por WhatsApp</h3>
+              <p>Agendá tu turno de forma fácil, rápida y sin complicaciones.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="section-inner">
+          <div class="section-heading section-heading-center">
+            <p class="eyebrow">Lo que dicen nuestros pacientes</p>
+            <h2>Opiniones que nos inspiran</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <div aria-hidden="true">★★★★★</div>
+              <p>Excelente atención, puntualidad y un consultorio impecable. Me sentí muy cómoda desde el primer momento.</p>
+              <strong>Paciente</strong>
+            </article>
+            <article class="testimonial-card">
+              <div aria-hidden="true">★★★★★</div>
+              <p>Me explicaron todo el tratamiento con claridad y dedicación. Superó mis expectativas.</p>
+              <strong>Paciente</strong>
+            </article>
+            <article class="testimonial-card">
+              <div aria-hidden="true">★★★★★</div>
+              <p>Profesionalismo, calidez y un equipo que te acompaña en cada etapa del tratamiento.</p>
+              <strong>Paciente</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section about" id="sobre-cmv">
         <div class="section-inner about-grid">
           <div>
-            <p class="eyebrow">Sobre CMV</p>
-            <h2>Un espacio pensado para cuidar tu salud bucal</h2>
+            <p class="eyebrow">Sobre CMV Dental Studio</p>
+            <h2>Odontología moderna en un espacio pensado para tu bienestar</h2>
             <p>
-              CMV Dental Studio combina atención odontológica profesional, cercanía y una identidad moderna.
-              Nuestro objetivo es que cada paciente se sienta acompañado desde la primera consulta hasta el
-              final de su tratamiento.
+              Nuestro consultorio combina atención odontológica profesional con un ambiente cálido y relajado.
+              Nos enfocamos en brindarte una experiencia cómoda, transparente y de calidad en cada visita.
             </p>
           </div>
 
-          <div class="feature-list" aria-label="Beneficios principales">
-            <div class="feature-item">
-              <span></span>
-              <p>Atención personalizada</p>
-            </div>
-            <div class="feature-item">
-              <span></span>
-              <p>Turnos simples</p>
-            </div>
-            <div class="feature-item">
-              <span></span>
-              <p>Seguimiento profesional</p>
-            </div>
-            <div class="feature-item">
-              <span></span>
-              <p>Ubicación en CABA</p>
-            </div>
-          </div>
+          <figure class="about-visual">
+            <img src="assets/cmv-hero.png" alt="Espacio moderno de atención odontológica">
+          </figure>
         </div>
       </section>
 
       <section class="section booking" id="turnos">
         <div class="section-inner booking-panel">
+          <div class="booking-icon" aria-hidden="true">
+            <svg><use href="#icon-calendar"></use></svg>
+          </div>
           <div>
-            <p class="eyebrow">Agenda online</p>
             <h2>Agendá tu turno online</h2>
             <p>
               Podés solicitar tu turno de forma rápida a través de nuestro sistema de agenda online.
-              Elegí el servicio, completá tus datos y el equipo de CMV Dental Studio validará la cita.
+              Elegí el servicio, completá tus datos y validaremos tu cita.
             </p>
           </div>
-          <a class="button button-primary button-large js-booking-link" href="https://ff.healthatom.io/pR1Ikc">Agendar turno</a>
+          <a class="button button-primary button-large js-booking-link" href="https://ff.healthatom.io/pR1Ikc">
+            <svg aria-hidden="true"><use href="#icon-calendar"></use></svg>
+            Agendar turno
+          </a>
         </div>
       </section>
 
@@ -256,14 +348,25 @@
             <h2>Estamos en CABA</h2>
             <address>
               <p><strong>Dirección</strong> Pres. Luis Sáenz Peña 819, 3H, CABA</p>
-              <p><strong>WhatsApp</strong> <a class="js-whatsapp-link" href="#" target="_blank" rel="noopener">+54 9 11 6001-9098</a></p>
+              <p><strong>WhatsApp</strong> <a class="js-whatsapp-link" href="#" target="_blank" rel="noopener">+54 9 11 7163-2727</a></p>
               <p><strong>Email</strong> <a href="mailto:od.camivazquez@gmail.com">od.camivazquez@gmail.com</a></p>
               <p><strong>Instagram</strong> <a href="https://www.instagram.com/cmvodontologia/" target="_blank" rel="noopener">@cmvodontologia</a></p>
             </address>
-            <a class="button button-whatsapp js-whatsapp-link" href="#" target="_blank" rel="noopener">
-              <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-              Consultar por WhatsApp
-            </a>
+            <div class="contact-actions">
+              <a class="button button-whatsapp js-whatsapp-link" href="#" target="_blank" rel="noopener">
+                <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                Consultar por WhatsApp
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://www.google.com/maps/search/?api=1&query=Pres.%20Luis%20S%C3%A1enz%20Pe%C3%B1a%20819%203H%20CABA"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg aria-hidden="true"><use href="#icon-map-pin"></use></svg>
+                Cómo llegar
+              </a>
+            </div>
           </div>
 
           <div class="map-wrap" aria-label="Mapa de CMV Dental Studio">
