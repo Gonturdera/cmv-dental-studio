@@ -679,6 +679,7 @@ address strong {
 
 @media (max-width: 520px) {
   .nav {
+    flex-wrap: wrap;
     align-items: flex-start;
     gap: 10px;
   }
@@ -691,6 +692,16 @@ address strong {
   .header-actions .button {
     padding-inline: 12px;
     font-size: 0.9rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    order: 3;
+  }
+
+  .header-actions .js-booking-link {
+    flex: 1;
   }
 
   .header-whatsapp span {
