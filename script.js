@@ -1,6 +1,6 @@
 const DENTALINK_BOOKING_URL = "https://ff.healthatom.io/pR1Ikc";
 
-const WHATSAPP_URL = "https://wa.link/0nuoop";
+const WHATSAPP_URL = "https://wa.me/5491171632727";
 
 const hasDentalinkUrl =
   DENTALINK_BOOKING_URL &&
